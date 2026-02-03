@@ -1,20 +1,25 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
     content: [
-        "./index.html",
-        "./src/**/*.{js,ts,jsx,tsx}",
+        "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+        "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+        "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
         extend: {
             colors: {
-                bg: {
-                    primary: '#0A0A0B', // Matte Navy
+                obsidian: "#020202",
+                slate: {
+                    950: "#020617",
                 },
             },
             fontFamily: {
-                sans: ['Inter', 'system-ui', 'sans-serif'],
+                geist: ["var(--font-geist-sans)", "Inter", "sans-serif"],
+            },
+            backgroundImage: {
+                "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
             },
         },
     },
     plugins: [],
-}
+};

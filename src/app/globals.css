@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --background: #020202;
+    --foreground: #f8fafc;
+}
+
+body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+/* Aura System */
+.aura {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.aura-1 {
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(71, 85, 105, 0.15) 0%, transparent 70%);
+    filter: blur(100px);
+}
+
+.aura-2 {
+    position: absolute;
+    bottom: -10%;
+    left: -10%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.1) 0%, transparent 70%);
+    filter: blur(100px);
+}
+
+/* Glassmorphism */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+}
+
+/* Mouse Icon Animation */
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+}
+
+.mouse-scroll {
+    width: 24px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    position: relative;
+}
+
+.mouse-scroll::before {
+    content: '';
+    width: 4px;
+    height: 8px;
+    background: white;
+    position: absolute;
+    left: 50%;
+    margin-left: -2px;
+    top: 8px;
+    border-radius: 2px;
+    animation: scroll 2s infinite;
+}
