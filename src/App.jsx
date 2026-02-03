@@ -1,13 +1,11 @@
 import React from 'react';
 import Layout from './components/Layout';
-import Hero from './components/Hero';
-import Pillars from './components/Pillars';
+import BentoGrid from './components/BentoGrid';
 
 function App() {
   return (
     <Layout>
-      <Hero />
-      <Pillars />
+      <BentoGrid />
     </Layout>
   );
 }
